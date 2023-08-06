@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+	<h1>Profile</h1>
+	<p>
+		Welcome to your profile!
+		You can <a href="{% url 'account:edit' %}">edit your profile</a> or
+		<a href="{% url 'account:password_change' %}">change your password</a>.
+	</p>
+	<p>
+        Your username: {{ user_profile.user.username }}
+    </p>
+	<p>
+        Your name: {% if user_profile.user.first_name %}{{ user_profile.user.first_name }}{% else %}No first name added yet.{% endif %}
+    </p>
+	<p>
+        Your last name: {% if user_profile.user.last_name %}{{ user_profile.user.last_name }}{% else %}No last name added yet.{% endif %}
+    </p>
+    {% if user_profile.photo %}
+        <img src="{{ user_profile.photo.url }}" width="100" alt="Profile photo">
+    {% else %}
+        <p>No profile photo available.</p>
+    {% endif %}
+{% endblock %}
