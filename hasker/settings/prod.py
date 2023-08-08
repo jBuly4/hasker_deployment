@@ -4,7 +4,7 @@ from .base import *
 DEBUG = False
 
 ADMINS = [
-    ('hasker_admin', 'test@test.com'),
+    ('hasker_admin', 'hasker@hasker.test'),
 ]
 
 ALLOWED_HOSTS = ['*']

@@ -131,3 +131,4 @@ dmypy.json
 # some other files and dirs
 /.idea
 /.env
+/data

@@ -16,3 +16,7 @@ DATABASES = {
 
 # how to use
 # python manage.py runserver --settings=hasker.settings.local
+
+# don't forget to move to test settings
+if 'test' in sys.argv:
+    DATABASES['default'] = {'ENGINE': 'django.db.backends.sqlite3'}
